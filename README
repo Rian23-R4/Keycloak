@@ -1,0 +1,11 @@
+# Setting Timezone
+timedatectl
+cat /etc/timezone
+timedatectl list-timezones
+timedatectl set-timezone Asia/Jakarta
+
+# Setup Docker
+
+bash runner.sh -a=start -e=local
+bash runner.sh -a=stop -e=local --attach
+bash runner.sh -a=stop -e=local --rmi
