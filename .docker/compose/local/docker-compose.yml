@@ -6,8 +6,8 @@ services:
       dockerfile: ./.docker/file/local/keycloak/Dockerfile
     image: keycloak:latest
     ports:
-      - 7080:8080
-      - ${DOCKER_KEYCLOAK_BIND_PORT}:8443
+      - ${DOCKER_KEYCLOAK_BIND_PORT}:8080 # HTTP
+      - ${DOCKER_KEYCLOAK_BIND_PORT_SSL}:8443 # HTTPS
     volumes:
       - ./../../data/local/keycloak/data:/opt/keycloak/data
     env_file:
